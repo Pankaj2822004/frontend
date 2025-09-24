@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/frontendmajor/static/css/main.9424bb11.css",
+    "main.js": "/frontendmajor/static/js/main.a9266ca6.js",
+    "static/js/453.ed3810f9.chunk.js": "/frontendmajor/static/js/453.ed3810f9.chunk.js",
+    "static/media/sl_z_072523_61700_05.jpg": "/frontendmajor/static/media/sl_z_072523_61700_05.228ae94dd23368b670c4.jpg",
+    "static/media/subaru-logo-2019-download.png": "/frontendmajor/static/media/subaru-logo-2019-download.3200a90ef2b2fbc2fd8e.png",
+    "static/media/v982-d3-04.jpg": "/frontendmajor/static/media/v982-d3-04.f6d771f47ee42c01f0de.jpg",
+    "static/media/10464408.png": "/frontendmajor/static/media/10464408.a682bb4afde7056eb6f4.png",
+    "static/media/laptop-removebg-preview.png": "/frontendmajor/static/media/laptop-removebg-preview.85536ab06f489f47ced3.png",
+    "static/media/log3.webp": "/frontendmajor/static/media/log3.ce133ca380041f0366fd.webp",
+    "static/media/audi-logo-1969-download.png": "/frontendmajor/static/media/audi-logo-1969-download.cebfb166de2ee3e9b92a.png",
+    "static/media/bmw-logo-1917-download.png": "/frontendmajor/static/media/bmw-logo-1917-download.2792e5ba2c8bbe755f85.png",
+    "static/media/log.jpg": "/frontendmajor/static/media/log.dd021c13321ac59d6901.jpg",
+    "static/media/headphoine-removebg-preview.png": "/frontendmajor/static/media/headphoine-removebg-preview.8dd91187358045a994b1.png",
+    "static/media/camera-removebg-preview.png": "/frontendmajor/static/media/camera-removebg-preview.297396a635b1353a21f2.png",
+    "static/media/log2.jpg": "/frontendmajor/static/media/log2.b7226bb0dfce88e5ad52.jpg",
+    "static/media/tesla-logo-2007-full-download.png": "/frontendmajor/static/media/tesla-logo-2007-full-download.00864e6631f3efd32a01.png",
+    "static/media/phone_14_01-removebg-preview.png": "/frontendmajor/static/media/phone_14_01-removebg-preview.91d8896473afbcb7ab32.png",
+    "static/media/sell.avif": "/frontendmajor/static/media/sell.a147c659c0563b5bcc4c.avif",
+    "static/media/electronic-gadgets-500x500.webp": "/frontendmajor/static/media/electronic-gadgets-500x500.8b3fcf24f4da4d94af9c.webp",
+    "static/media/heart (1).png": "/frontendmajor/static/media/heart (1).a882063e838d335ed3fb.png",
+    "static/media/chat.avif": "/frontendmajor/static/media/chat.1505800cfbad3a23d4c8.avif",
+    "index.html": "/frontendmajor/index.html",
+    "main.9424bb11.css.map": "/frontendmajor/static/css/main.9424bb11.css.map",
+    "main.a9266ca6.js.map": "/frontendmajor/static/js/main.a9266ca6.js.map",
+    "453.ed3810f9.chunk.js.map": "/frontendmajor/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9424bb11.css",
+    "static/js/main.a9266ca6.js"
+  ]
+}
