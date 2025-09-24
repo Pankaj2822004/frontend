@@ -1,10 +1,13 @@
 
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = 'pankajisgoodboy'; // Ensure this is consistent across your application
+// const JWT_SECRET = 'pankajisgoodboy'; // Ensure this is consistent across your application
+require("dotenv").config({ path: "./test.env" }); 
+
+const JWT_SECRET = process.env.JWT_SECRET; // read from environment variable
 
 const fetchUser = (req, res, next) => {
-  const token = req.header('Authorization')?.replace('Bearer ', '');
-  console.log("Token received by server:", token); // Debug token reception
+  const token = req.header('auth-token');  // ✅ now matches frontend
+  console.log("Token received by server:", token);
 
   if (!token) {
     return res.status(401).json({ error: 'No token provided' });

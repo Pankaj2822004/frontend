@@ -1,4 +1,7 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+// require("dotenv").config(); // <-- this loads .env
+require("dotenv").config({ path: "./test.env" }); // explicitly load test.env
+
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -6,14 +9,11 @@ const options = {
 
 const main = async () => {
   try {
-    await mongoose.connect('mongodb+srv://panku4210000:Panku420@cluster0.arvk5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', options);
-    console.log('Connected to MongoDB');
+    await mongoose.connect(process.env.MONGO_URI, options);
+    console.log("Connected to MongoDB");
   } catch (error) {
-    console.error('Could not connect to MongoDB', error);
+    console.error("Could not connect to MongoDB", error);
   }
 };
 
 module.exports = main;
-
-
- 

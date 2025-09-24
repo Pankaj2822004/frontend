@@ -20,102 +20,47 @@ const Navbar = ({ showAlert, loggedIn, setLoggedIn }) => {
     navigate("/");
   };
   const date = new Date();
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   if (!loggedIn) {
-  //     showAlert("Please login first", "warning");
-  //     navigate("/login");
-  //   } else {
-  //     const formData = new FormData(event.target);
-  //     const newProduct = {
-  //       img: formData.get("imagelink"),
-  //       desc: formData.get("description"),
-  //       cost: formData.get("price"),
-  //       Location: formData.get("address"),
-  //       Date: date.toLocaleDateString("en-GB", {
-  //         day: "numeric",
-  //         month: "long",
-  //         year: "numeric",
-  //       }),
-  //       fullName: formData.get("fullName"),
-  //       type: formData.get("type"),
-  //       user: loggedIn.userId,
-  //     };
   
-  //     try {
-  //       const token = localStorage.getItem("token");
-  //       console.log("Token being sent:", token);  // Add this to ensure token is retrieved
-  //       const response = await axios.post(
-  //         "http://localhost:5000/api/products",
-  //         newProduct,
-  //         {
-  //           headers: {
-  //             Authorization: `Bearer ${token}`,  // Correct Bearer format
-  //           },
-  //         }
-  //       );
-        
-        
-  //       console.log("Product added:", response.data);
-  //       showAlert("Product uploaded successfully", "success");
-  //       setsellButton(false); // Close the form after submission
-  //     } catch (error) {
-  //       console.error("Error submitting form:", error);
-  //       showAlert("Error submitting form", "danger");
-  //     }
-  //   }
-  // };
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-  
-    if (!loggedIn || !loggedIn.userId) {
-      showAlert("Please login first", "warning");
-      navigate("/login");
-      return;
-    }
-  
-    const formData = new FormData(event.target);
-    const newProduct = {
-      img: formData.get("imagelink"),
-      desc: formData.get("description"),
-      cost: formData.get("price"),
-      Location: formData.get("address"),
-      Date: date.toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "long",
-        year: "numeric",
-      }),
-      fullName: formData.get("fullName"),
-      type: formData.get("type"),
-      user: loggedIn.userId,  // Ensure userId is available
-    };
-  
-    try {
-      const token = localStorage.getItem("token");
-      if (!token) {
-        throw new Error("No token found in localStorage");
-      }
-      console.log("Token being sent:", token); // Verify token is present
-  
-      const response = await axios.post(
-        "http://localhost:5000/api/products",
-        newProduct,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Correct Bearer format
-          },
-        }
-      );
-  
-      console.log("Product added:", response.data);
-      showAlert("Product uploaded successfully", "success");
-      setsellButton(false); // Close the form after submission
-    } catch (error) {
-      console.error("Error submitting form:", error.response ? error.response.data : error.message);
-      showAlert("Error submitting form", "danger");
-    }
+const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.target);
+  const newProduct = {
+    img: formData.get("imagelink"),
+    desc: formData.get("description"),
+    cost: formData.get("price"),
+    Location: formData.get("address"),
+    Date: date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    }),
+    fullName: formData.get("fullName"),
+    type: formData.get("type"),
   };
-  
+
+  try {
+    const token = localStorage.getItem("token");
+    console.log("Token being sent:", token || "No token"); 
+
+    const response = await axios.post(
+      "http://localhost:5000/api/products",
+      newProduct,
+      {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      }
+    );
+
+    console.log("Product added:", response.data);
+    showAlert("Product uploaded successfully", "success");
+    setsellButton(false); 
+  } catch (error) {
+    console.error("Error submitting form:", error.response ? error.response.data : error.message);
+    showAlert("Error submitting form", "danger");
+  }
+};
+
+
   const handleClickOutside = (event) => {
     if (popupRef.current && !popupRef.current.contains(event.target)) {
       setIsPopupVisible(false);
@@ -128,12 +73,12 @@ const Navbar = ({ showAlert, loggedIn, setLoggedIn }) => {
   };
 
   const SellB = () => {
-    if (!loggedIn) {
-      showAlert("Please login first", "warning");
-      navigate("/login");
-    } else {
+    // if (!loggedIn) {
+    //   showAlert("Please login first", "warning");
+    //   navigate("/login");
+    // } else {
       setsellButton(!sellButton);
-    }
+    // }
   };
 
   useEffect(() => {
@@ -147,9 +92,9 @@ const Navbar = ({ showAlert, loggedIn, setLoggedIn }) => {
     <div>
       {/* <nav className="bg-white border-gray-200 dark:bg-gray-900"> */}
       <nav
-        className=" border-gray-200 dark:bg-gray-900"
+      className="bg-emerald-100 shadow-md border-gray-200 "
         style={{
-          backgroundColor: "gainsboro",
+          // backgroundColor: "gainsboro",
           margin: "-11px 0px -44px 1px",
           padding: " 8px 0px 44px 1px",
         }}

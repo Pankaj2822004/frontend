@@ -23,7 +23,7 @@ function App() {
 
   const showAlert = (message, type) => {
     setalert({
-      msg: message,
+      msg: message, 
       type: type,
     });
     setTimeout(() => {
